@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
+			<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="css/gmapsAPI.css">
+			<title>Demo</title>
+		</head>
+		<body>
+			<div class="giranaut-cities">
+				<ul class="btn-cities-list">
+					<li><button class="btn btn-info" id="chicago" >Chicago</button></li>
+					<li><button class="btn btn-info" id="nyc" >NYC</button></li>
+					<li><button class="btn btn-info" id="boulder" >Boulder</button></li>
+					<li><button class="btn btn-info" id="lasVegas" >Las Vegas</button></li>
+				</ul>	
+			</div>
+			<div id="map-canvas">
+			</div>
+			<img class="cachedImages" id="jencon" src="css/img/jenconcircle.png">
+			<img class="cachedImages" id="limacon" src="css/img/adrianalimacircle.png">
+			<img class="cachedImages" id="rosiecon" src="css/img/rosiehuntingtoncircle.png">
+			<img class="cachedImages" id="arleniscon" src="css/img/arlenissosapenacircle.png">
+			<img class="cachedImages" id="jarahcon" src="css/img/jarahmarianocircle.png">
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Mb_Wd80IfGpLGwrJidF599pwNJGtB2s&sensor=true">
+		    </script>
+		    <script src="http://jawj.github.io/OverlappingMarkerSpiderfier/bin/oms.min.js"></script><!--spiderfy googlemaps markers(if one is on top of the other they will spread out with a connecting string)-->
+			<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+			<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/spiderfy.js"></script>
+			<script type="text/javascript" src="js/gmapsAPI.js"></script>
+			<script type="text/javascript" src="js/gmapsFunctionality.js"></script>
+		</body>
+	</html>
