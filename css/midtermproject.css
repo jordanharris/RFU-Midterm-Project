@@ -11,12 +11,18 @@ aside {
 	display: inline-block;
 	margin: 50px 0px 0px 10px;
 	border-radius: 30px 30px 30px 30px;
+	z-index: 100;
 }
 
 ul{
 	list-style-type: none;
 	text-align: center;
 }
+
+h1, h2, h3, h4{
+	color: #999;
+}
+
 
 .imageCycle1{
 	background:url("img/pamplonaStreetcolored.jpeg") no-repeat center center fixed;
@@ -61,7 +67,7 @@ ul{
 	left: 100px;
 }
 
-.banner{
+.banner, .banners{
 	position: relative;
 	top: 70px;
 	background-color: #000;
@@ -71,11 +77,16 @@ ul{
 	border-top-right-radius: 10px;
 }
 
+.banner{
+	top: 70px;
+}
+
+.banners{
+	margin-top: 15px
+}
+
 .motto{
 	margin-top: 100px;
-}
-h2, h3{
-	color: #999;
 }
 
 /*.giraNautLogo{
@@ -138,6 +149,7 @@ h2, h3{
 	padding: 5px;
 }
 
+/*sign-up forms*/
 .asideULSocialMedia{
 	padding: 0px 15px 0px 15px;
 }
@@ -159,25 +171,72 @@ h2, h3{
 	cursor: pointer;
 }
 
-.subHeader{
-	padding-left: 230px;
+.sign-up-form{
+	text-align: center;
+	margin: 150px 0px 0px 0px;	
 }
 
-.glyphicon-share-alt{
-	padding: 0px 0px 0px 20px;
+.subHeader{
+	text-align: right;
 }
 
 .exploreGiraNaut{
-	padding: 0px 0px 10px 16px;
+	padding: 0px 11px 10px 10px;
 	font-size: 20px;
 	border: none;
+}
+
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
 /*section tourists*/
 
 .articleMargin{
 	padding-top: 50px;
+	background: rgb(240,249,255); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(240,249,255,1)), color-stop(47%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+#touristInfo{
+	
+}
+
+.carouselImage{
+	width: 100%;
+	min-height: 500px;
+}
+
+.carousel{
+	max-width: 80%;
+	margin: 0px auto;
+}
+
+.carousel-caption p{
+	font-size: 36px;
+}
+
+.sectionSeparation{
+	margin-top: 70px;
+}
+
+.touristGNDescription{
+	text-align: center;
+}
+
+
+
 
 .cachedImages{
 	visibility: hidden;

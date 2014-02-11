@@ -77,7 +77,17 @@ $(function(){
 			alert("Password must contain at least one Uppercase letter, one Lowercase letter, and one Number");
 			return false;
 		}
-	});	
+	});
+
+	//clear sign-in fields if "remember me" isn't checked
+	$(document).on("click", function(){
+		console.log("test");
+		console.log($(".checkbox:checked").is(":checked"));
+		if($("#emailSignIn").css("display")!=="none" && $(".checkbox").is(":checked") === false){
+			$("form input").val("");
+		}
+	})
+
 
 	//hover over social media for image effect
 	$(".socialMediaImageTwitter").hover(function(){
@@ -119,6 +129,9 @@ $(function(){
 	$(".socialMediaImageGooglePlus").on("click", function(){
 		$(this).attr("src", "css/img/googleplusactive.png");
 	});
+
+	
+
 
 
 
