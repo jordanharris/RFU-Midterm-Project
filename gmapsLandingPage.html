@@ -9,13 +9,26 @@
 			<title>Demo</title>
 		</head>
 		<body>
-			<div class="giranaut-cities">
-				<ul class="btn-cities-list">
-					<li><button class="btn btn-info" id="chicago" >Chicago</button></li>
-					<li><button class="btn btn-info" id="nyc" >NYC</button></li>
-					<li><button class="btn btn-info" id="boulder" >Boulder</button></li>
-					<li><button class="btn btn-info" id="lasVegas" >Las Vegas</button></li>
-				</ul>	
+			<div class="container giranaut-cities">
+				<div id="chris">
+					<div class="row col-sm-12">
+						<div class="">
+							<h1>GiraNaut proudly serves the following cities:</h1>
+							<ul class="btn-cities-list">
+								<li class="col-xs-12 col-md-2"><button class="btn btn-info" id="chicago" >Chicago</button></li>
+								<li class="col-xs-12 col-md-2"><button class="btn btn-info" id="nyc" >NYC</button></li>
+								<li class="col-xs-12 col-md-2"><button class="btn btn-info" id="boulder" >Boulder</button></li>
+								<li class="col-xs-12 col-md-2"><button class="btn btn-info" id="lasVegas" >Las Vegas</button></li>
+							</ul>
+						</div>		
+					</div>
+				</div>
+			</div>	
+			<div id="guideBio">
+				
+			</div>
+			<div class="chatMessenger">
+				
 			</div>
 			<div id="map-canvas">
 			</div>
@@ -24,12 +37,30 @@
 			<img class="cachedImages" id="rosiecon" src="css/img/rosiehuntingtoncircle.png">
 			<img class="cachedImages" id="arleniscon" src="css/img/arlenissosapenacircle.png">
 			<img class="cachedImages" id="jarahcon" src="css/img/jarahmarianocircle.png">
+			<script id="guideBioCard" type="text/x-handlebars-template" >
+				<div class="guideInnerCard">
+					<div class="guideBioImage"><img src={{image}}></div>
+					<h2>{{name}}</h2>
+					<div class="scrolling">
+						<p><span>Website:</span> {{website}}</p>
+						{{#with post}}
+						<p><span>Languages:</span> {{sentence}}</p>
+						<p><span>Specialties:</span> {{sentence}}</p>
+						<p><span>Interest:</span> {{sentence}}</p>
+						<p><span>Bio:</span> {{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}{{paragraph}}</p>
+					</div>	
+					{{/with}}
+					<button class="btn btn-info guideChatButton" id="" >Chat With Guide</button>
+				</div>
+			</script>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Mb_Wd80IfGpLGwrJidF599pwNJGtB2s&sensor=true">
 		    </script>
+		    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
 		    <script src="http://jawj.github.io/OverlappingMarkerSpiderfier/bin/oms.min.js"></script><!--spiderfy googlemaps markers(if one is on top of the other they will spread out with a connecting string)-->
 			<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 			<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 			<script type="text/javascript" src="js/spiderfy.js"></script>
+			<script type="text/javascript" src="js/faker.js"></script>
 			<script type="text/javascript" src="js/gmapsAPI.js"></script>
 			<script type="text/javascript" src="js/gmapsFunctionality.js"></script>
 		</body>

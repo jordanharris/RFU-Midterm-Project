@@ -81,10 +81,8 @@ $(function(){
 
 	//clear sign-in fields if "remember me" isn't checked
 	$(document).on("click", function(){
-		console.log("test");
-		console.log($(".checkbox:checked").is(":checked"));
 		if($("#emailSignIn").css("display")!=="none" && $(".checkbox").is(":checked") === false){
-			$("form input").val("");
+			$(".dropdown form input").val("");
 		}
 	})
 

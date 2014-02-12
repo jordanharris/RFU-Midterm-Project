@@ -1,4 +1,4 @@
-$(function(){
+// $(function(){
 	function initialize() {
         var mapOptions = {
         	center: new google.maps.LatLng(40.0076, 254.744),
@@ -8,7 +8,8 @@ $(function(){
         	minZoom: 12,
         	streetViewControl: false,
         	mapTypeControl: false,
-        	zoomControl: false
+        	zoomControl: false,
+        	draggable: false,
         };
         //creates the google map api
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -16,13 +17,13 @@ $(function(){
         //create ovrelapping markers plug-in that separates markers that are on the same latLng
         var oms = new OverlappingMarkerSpiderfier(map);
         var iw = new google.maps.InfoWindow();
-		oms.addListener('click', function(marker, event) {
-			iw.setContent(marker.desc);
-			iw.open(map, marker);
-		});
-		oms.addListener('spiderfy', function(markers) {
-			iw.close();
-		});
+		// oms.addListener('click', function(marker, event) {
+		// 	iw.setContent(marker.desc);
+		// 	iw.open(map, marker);
+		// });
+		// oms.addListener('spiderfy', function(markers) {
+		// 	iw.close();
+		// });
 
 		//creates info window for each marker
 		// var infowindow = new google.maps.InfoWindow({
@@ -47,10 +48,23 @@ $(function(){
         {locate: new google.maps.LatLng(36.09, 244.794)}
         ];
 
+        //generate fake Data from Faker.js to fill out sidebar
+        var fakeGuides = [];
+
+   
+		for (var i = 0; i < 20; i++) {
+			fakeGuides.push(Faker.Helpers.createCard());
+		}
+		var guideInfo = $('#guideBioCard').html();
+		var guideTemplate = Handlebars.compile(guideInfo);
+		
+
         //creates the marker that is to be placed
         function markerCreate(arrImages,arrLatLng ){
-        	for(var i in arrLatLng){
+        	
+        	for(var i=0; i < arrLatLng.length; i++ ){
         		for(var j = 0; j<arrImages.length ; j++){
+        			var guideData = fakeGuides[j+(i*arrImages.length)];
 			        var marker = new google.maps.Marker({
 			            position: arrLatLng[i].locate,
 			            map: map,
@@ -59,6 +73,15 @@ $(function(){
 			            draggable: true
 			        });
 			        oms.addMarker(marker);
+			        guideData.image = marker.icon;
+	        		(function(marker, guideData){
+			  			google.maps.event.addListener(marker, 'click', function() {
+			  				var chris = guideTemplate(guideData);
+			  				// $('#guideBio').text("");
+		      				$('#guideBio').html(chris);
+			    		});
+			    	})(marker, guideData);
+			    	
 		    	}
 		    }
 	    }
@@ -204,4 +227,4 @@ $(function(){
 
 	}
     google.maps.event.addDomListener(window, 'load', initialize);
-})
+// })
