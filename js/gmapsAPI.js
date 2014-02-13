@@ -50,15 +50,12 @@
 
         //generate fake Data from Faker.js to fill out sidebar
         var fakeGuides = [];
-
-   
 		for (var i = 0; i < 20; i++) {
 			fakeGuides.push(Faker.Helpers.createCard());
 		}
 		var guideInfo = $('#guideBioCard').html();
 		var guideTemplate = Handlebars.compile(guideInfo);
 		
-
         //creates the marker that is to be placed
         function markerCreate(arrImages,arrLatLng ){
         	
@@ -77,7 +74,6 @@
 	        		(function(marker, guideData){
 			  			google.maps.event.addListener(marker, 'click', function() {
 			  				var chris = guideTemplate(guideData);
-			  				// $('#guideBio').text("");
 		      				$('#guideBio').html(chris);
 			    		});
 			    	})(marker, guideData);
