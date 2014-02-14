@@ -52,7 +52,7 @@ li {
 
 #guideBio{
 	position: fixed;
-	top: 200px;
+	top: 20%;
 	right: 0px;
 	z-index: 10;
 	/*min-width: 450px;

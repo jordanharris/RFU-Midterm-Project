@@ -8,23 +8,20 @@ $(function(){
 		var obj = {"name": $(this).closest(".guideInnerCard").find("h2").text(),
 				   "image": $(this).closest(".guideInnerCard").find("img").attr("src")
 				  };
-
-		if(newarr.length > 0 && $(".guideChatBox").length < Math.floor($(window).innerWidth()/$(".guideChatBox").innerWidth())){
-			if(newarr.indexOf(obj.name) === -1){
+		if(newarr.length > 0 ){
+			if(newarr.indexOf(obj.name) !== -1){
+				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().css("display","block");
+				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().next().css("display","block");
+			}
+			else if(newarr.indexOf(obj.name) === -1 && $(".guideChatBox").length < Math.floor($(window).innerWidth()/$(".guideChatBox").innerWidth()) ){
 				$("#chatMessenger").css("display", "block");
 				var chatWrapDiv = $("<div class='guideChatBox' id="+obj.name.split(" ").join("")+"></div>");
 				$("#chatMessenger").append(chatWrapDiv);
 				chatWrapDiv.html(chatTemplate(obj));
 				newarr.push(obj.name);
 			}
-			else{
-				console.log("test");
-				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().css("display","block");
-				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().next().css("display","block");
-			}
 		}
 		else{
-			console.log("runnin");
 			if($(".guideChatBox").length < Math.floor($(window).innerWidth()/$(".guideChatBox").innerWidth())){
 				$("#chatMessenger").css("display", "block");
 				var chatWrapDiv = $("<div class='guideChatBox' id="+obj.name.split(" ").join("")+"></div>");

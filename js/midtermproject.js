@@ -78,7 +78,7 @@ $(function(){
 			alert("Password must contain at least one Uppercase letter, one Lowercase letter, and one Number");
 			return false;
 		}
-		window.location.href = "file:///Users/student/Desktop/RFU-Midterm-Project/gmapsLandingPage.html";
+		window.location.href = "gmapsLandingPage.html";
 	});
 
 	//clear sign-in fields if "remember me" isn't checked
