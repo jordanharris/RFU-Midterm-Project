@@ -52,7 +52,7 @@ li {
 
 #guideBio{
 	position: fixed;
-	top: 20%;
+	top: 17%;
 	right: 0px;
 	z-index: 10;
 	/*min-width: 450px;
@@ -93,7 +93,8 @@ li {
 .scrolling{
 	overflow: auto;
 	/*min-height: 350px;*/
-	max-height: 300px;
+	max-height: 275px;
+	width: 112%;
 }
 
 .giranaut-cities button{
