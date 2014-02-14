@@ -2,18 +2,36 @@ $(function(){
 	var obj;
 	var guideChat = $('#guideChatMessenger').html();
 	var chatTemplate = Handlebars.compile(guideChat);
-	
+	var newarr = [];
 
 	$(document).on("click", ".guideChatButton" ,function(){
-		// $(jordan).clone().appendTo("body");
-		if($(".jordan").length < 6){
 		var obj = {"name": $(this).closest(".guideInnerCard").find("h2").text(),
-					"image": $(this).closest(".guideInnerCard").find("img").attr("src")}
-		$("#chatMessenger").css("display", "block");
-		var chatWrapDiv = $("<div class='jordan'></div>");
-		$("#chatMessenger").append(chatWrapDiv);
-		chatWrapDiv.html(chatTemplate(obj));
-		// $(".jordan").html(chatTemplate(obj)).appendTo("#chatMessenger");
+				   "image": $(this).closest(".guideInnerCard").find("img").attr("src")
+				  };
+
+		if(newarr.length > 0 && $(".guideChatBox").length < Math.floor($(window).innerWidth()/$(".guideChatBox").innerWidth())){
+			if(newarr.indexOf(obj.name) === -1){
+				$("#chatMessenger").css("display", "block");
+				var chatWrapDiv = $("<div class='guideChatBox' id="+obj.name.split(" ").join("")+"></div>");
+				$("#chatMessenger").append(chatWrapDiv);
+				chatWrapDiv.html(chatTemplate(obj));
+				newarr.push(obj.name);
+			}
+			else{
+				console.log("test");
+				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().css("display","block");
+				$("#"+obj.name.split(" ").join("")+"").find(".panel-heading").next().next().css("display","block");
+			}
+		}
+		else{
+			console.log("runnin");
+			if($(".guideChatBox").length < Math.floor($(window).innerWidth()/$(".guideChatBox").innerWidth())){
+				$("#chatMessenger").css("display", "block");
+				var chatWrapDiv = $("<div class='guideChatBox' id="+obj.name.split(" ").join("")+"></div>");
+				$("#chatMessenger").append(chatWrapDiv);
+				chatWrapDiv.html(chatTemplate(obj));
+				newarr.push(obj.name);
+			}
 		}
 	})
 
@@ -39,9 +57,20 @@ $(function(){
 			}
 	})
 
-	$(document).on("click", ".removeButton" ,function(){	
-		$(this).closest(".jordan").remove();
+	$(document).on("click", ".removeButton" ,function(){
+		var guideChatBoxDiv = $(this).closest(".guideChatBox");
+		var nameFinder = $.trim(guideChatBoxDiv.find(".panel-heading > span").text());
+		guideChatBoxDiv.remove();
+		newarr.splice(newarr.indexOf(nameFinder),1);
+	
 	})
+
+
+
+
+
+
+
 
 
 

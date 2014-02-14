@@ -11,6 +11,9 @@
         	zoomControl: false,
         	draggable: false,
         };
+        //variable declaring center on window resize
+        var center;
+
         //creates the google map api
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
@@ -25,10 +28,6 @@
 		// 	iw.close();
 		// });
 
-		//creates info window for each marker
-		// var infowindow = new google.maps.InfoWindow({
-  //     		content: "hey all!"
-  // 		});
 
         //Create static markers on the map when map loads
         //creates variable of marker images to be used when the marker is placed
@@ -48,6 +47,8 @@
         {locate: new google.maps.LatLng(36.09, 244.794)}
         ];
 
+
+
         //generate fake Data from Faker.js to fill out sidebar
         var fakeGuides = [];
 		for (var i = 0; i < 20; i++) {
@@ -55,6 +56,12 @@
 		}
 		var guideInfo = $('#guideBioCard').html();
 		var guideTemplate = Handlebars.compile(guideInfo);
+
+
+		//function grabs center of map at current window size
+		function calculateCenter() {
+		  center = map.getCenter();
+		}
 		
         //creates the marker that is to be placed
         function markerCreate(arrImages,arrLatLng ){
@@ -74,6 +81,7 @@
 	        		(function(marker, guideData){
 			  			google.maps.event.addListener(marker, 'click', function() {
 			  				var chris = guideTemplate(guideData);
+			  				$("#guideBio").css("display","block");
 		      				$('#guideBio').html(chris);
 			    		});
 			    	})(marker, guideData);
@@ -200,22 +208,24 @@
 	  		{
 	    	"elementType": "labels",
 	    	"stylers": [{
-	    		"weight": 0.5 
+	    		"weight": 0.7 
 	    	},
 	      	{
-	      		"color": "#0000ff" 
+	      		"color": "#333333" 
 	      	}]
 	  		}
 		]
 		//calls setOptions and makes map styles to styles listed above:
 		map.setOptions({styles: stylers});
 
-
-
-
-	
-
-
+		//google listener to calculate center of map when window is idle
+		google.maps.event.addDomListener(map, 'idle', function() {
+		  calculateCenter();
+		});
+		//google listener to set center of map when window is resized
+		google.maps.event.addDomListener(window, 'resize', function() {
+		  map.setCenter(center);
+		});
 
 
 

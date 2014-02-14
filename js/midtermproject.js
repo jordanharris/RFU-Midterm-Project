@@ -62,7 +62,8 @@ $(function(){
 
 
 	//regex checks for signup validation
-	$("#submitSignIn").on("click", function(){	
+	$("#submitSignIn").on("click", function(e){
+		e.preventDefault();	
 		var email = $("#emailSignIn").val();
 		var password = $("#passwordSignIn").val();
 		var mailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z\s]{2,4}$/;
@@ -77,6 +78,7 @@ $(function(){
 			alert("Password must contain at least one Uppercase letter, one Lowercase letter, and one Number");
 			return false;
 		}
+		window.location.href = "file:///Users/student/Desktop/RFU-Midterm-Project/gmapsLandingPage.html";
 	});
 
 	//clear sign-in fields if "remember me" isn't checked
