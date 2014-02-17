@@ -64,11 +64,13 @@ li {
 	border-top-left-radius: 25px;
 	overflow: hidden;
 	display: none;
+	padding-right: 0px;
+	padding-left: 0px;
 
 }
 
 .guideInnerCard{
-	padding: 0px 0px 0px 25px;
+	padding: 0px 0px 0px 30px;
 }
 
 .guideInnerCard img{
@@ -93,7 +95,7 @@ li {
 .scrolling{
 	overflow: auto;
 	/*min-height: 350px;*/
-	max-height: 275px;
+	max-height: 250px;
 }
 
 .giranaut-cities button{

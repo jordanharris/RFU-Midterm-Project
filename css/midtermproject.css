@@ -236,9 +236,117 @@ h1, h2, h3, h4{
 	text-align: center;
 }
 
+/*section tour guides*/
+
+.subHeadingsAlignment{
+	text-align: center;
+}
+
+.applicationProcessButton{
+	text-align: center;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 
 
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+/* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+ }	
+
+ @media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+/*End of Tour Guide Section*/
+
+
+/*FAQ SECTION*/
+
+.sectionHeader{
+	margin:0px 0px 0px 0px;
+}
+.faq-cat-content {
+    margin-top: 25px;
+}
+
+.panel-heading a:focus {
+    outline: none;
+}
+
+.panel-heading a,
+.panel-heading a:hover,
+.panel-heading a:focus {
+    text-decoration: none;
+    color: #777777;
+}
+
+.faq-cat-content .panel-heading:hover {
+    background-color: #efefef;
+}
+
+.active-faq {
+    border-left: 5px solid #888888;
+}
+
+.panel-faq .panel-heading .panel-title span {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.panel-group .panel-faq{
+	margin-bottom: 10px;
+}
+/*END OF FAQ SECTION*/
 
 .cachedImages{
-	visibility: hidden;
+	display: none;
 }

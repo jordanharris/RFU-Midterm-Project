@@ -78,7 +78,7 @@ $(function(){
 			alert("Password must contain at least one Uppercase letter, one Lowercase letter, and one Number");
 			return false;
 		}
-		window.location.href = "gmapsLandingPage.html";
+		window.location.hoverf = "gmapsLandingPage.html";
 	});
 
 	//clear sign-in fields if "remember me" isn't checked
@@ -88,6 +88,17 @@ $(function(){
 		}
 	})
 
+	//Switch between "+" & "-" when FAQ item is clicked
+	$('.collapse').on('show.bs.collapse', function() {
+        var id = $(this).attr('id');
+        $('a[href="#' + id + '"]').closest('.panel-heading').addClass('active-faq');
+        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
+    });
+    $('.collapse').on('hide.bs.collapse', function() {
+        var id = $(this).attr('id');
+        $('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
+        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
+    });
 
 	//hover over social media for image effect
 	$(".socialMediaImageTwitter").hover(function(){
