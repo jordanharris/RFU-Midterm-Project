@@ -78,7 +78,7 @@ $(function(){
 			alert("Password must contain at least one Uppercase letter, one Lowercase letter, and one Number");
 			return false;
 		}
-		window.location.hoverf = "gmapsLandingPage.html";
+		window.location = "gmapsLandingPage.html";
 	});
 
 	//clear sign-in fields if "remember me" isn't checked

@@ -4,6 +4,12 @@ $(function(){
 	var chatTemplate = Handlebars.compile(guideChat);
 	var newarr = [];
 
+	//user sidebar toggle class
+	$("#menu-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("active");
+	});
+
 	$(document).on("click", ".guideChatButton" ,function(){
 		var obj = {"name": $(this).closest(".guideInnerCard").find("h2").text(),
 				   "image": $(this).closest(".guideInnerCard").find("img").attr("src")
@@ -61,6 +67,7 @@ $(function(){
 		newarr.splice(newarr.indexOf(nameFinder),1);
 	
 	})
+
 
 
 

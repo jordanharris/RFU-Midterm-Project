@@ -23,16 +23,33 @@
 						</div>		
 					</div>
 				</div>
+			</div>
+			<div id="wrapper" class="active">
+			      
+			      <!-- Sidebar -->
+			            <!-- Sidebar -->
+				<div id="sidebar-wrapper">
+			    	<ul id="sidebar_menu" class="sidebar-nav">
+			           	<li class="sidebar-brand">
+			           		<a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span>
+			           		</a>
+			       		</li>
+			      	</ul>
+			      	<ul class="sidebar-nav" id="sidebar">     
+			          	<li>
+			          		<a>Link1<span class="sub_icon glyphicon glyphicon-link"></span></a>
+			          	</li>
+			          	<li>
+			          		<a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a>
+			          	</li>
+			        </ul>
+			   	</div>
 			</div>	
 			<div class="col-xs-12 col-sm-4 col-md-3" id="guideBio">
-				
 			</div>
-			
 			<div id="map-canvas">
-
 			</div>
 			<div id="chatMessenger">
-				
 			</div>
 			<img class="cachedImages" id="jencon" src="css/img/jenconcircle.png">
 			<img class="cachedImages" id="limacon" src="css/img/adrianalimacircle.png">
@@ -75,13 +92,16 @@
 			                </div>
 			                <div class="panel-body">
 			                    <ul class="chat">
-			                        <li class="left clearfix"><span class="chat-img pull-left">
-			                            <img src={{image}} alt="User Avatar" class="img-circle" />
-			                        </span>
+			                        <li class="left clearfix">
+			                        	<span class="chat-img pull-left">
+			                            	<img src={{image}} alt="User Avatar" class="img-circle" />
+			                        	</span>
 			                            <div class="chat-body clearfix">
 			                                <div class="header">
-			                                    <strong class="primary-font">{{name}}</strong> <small class="pull-right text-muted">
-			                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+			                                    <strong class="primary-font">{{name}}</strong> 
+			                                    <small class="pull-right text-muted">
+			                                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+			                                    </small>
 			                                </div>
 			                                <p>
 			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
@@ -94,7 +114,8 @@
 			                        </span>
 			                            <div class="chat-body clearfix">
 			                                <div class="header">
-			                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+			                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago
+			                                    </small>
 			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
 			                                </div>
 			                                <p>
@@ -103,13 +124,16 @@
 			                                </p>
 			                            </div>
 			                        </li>
-			                        <li class="left clearfix"><span class="chat-img pull-left">
-			                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-			                        </span>
+			                        <li class="left clearfix">
+			                        	<span class="chat-img pull-left">
+			                            	<img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle"/>
+			                        	</span>
 			                            <div class="chat-body clearfix">
 			                                <div class="header">
-			                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-			                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+			                                    <strong class="primary-font">Jack Sparrow</strong>
+			                                    <small class="pull-right text-muted">
+			                                        <span class="glyphicon glyphicon-time"></span>14 mins ago
+			                                    </small>
 			                                </div>
 			                                <p>
 			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
@@ -117,12 +141,15 @@
 			                                </p>
 			                            </div>
 			                        </li>
-			                        <li class="right clearfix"><span class="chat-img pull-right">
-			                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-			                        </span>
+			                        <li class="right clearfix">
+			                        	<span class="chat-img pull-right">
+			                            	<img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+			                        	</span>
 			                            <div class="chat-body clearfix">
 			                                <div class="header">
-			                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
+			                                    <small class=" text-muted">
+			                                    	<span class="glyphicon glyphicon-time"></span>15 mins ago
+			                                    </small>
 			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
 			                                </div>
 			                                <p>
@@ -137,8 +164,7 @@
 			                    <div class="input-group">
 			                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
 			                        <span class="input-group-btn">
-			                            <button class="btn btn-warning btn-sm" id="btn-chat">
-			                                Send</button>
+			                            <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
 			                        </span>
 			                    </div>
 			                </div>
