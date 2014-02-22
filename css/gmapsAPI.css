@@ -58,7 +58,7 @@ li {
     background: #222;
     position: fixed;
     height: 100%;
-    z-index: 10000;
+    z-index: 6;
     transition: all .4s ease 0s;
 }
 
@@ -202,11 +202,7 @@ li {
 	top: 17%;
 	right: 0px;
 	z-index: 10;
-	/*min-width: 450px;
-	max-width: 450px;*/
 	background-image: url("img/blurred.jpeg");
-	/*min-height: 532px;*/
-	/*max-height: 532px;*/
 	border-bottom-left-radius: 25px;
 	border-top-left-radius: 25px;
 	overflow: hidden;
@@ -241,7 +237,6 @@ li {
 
 .scrolling{
 	overflow: auto;
-	/*min-height: 350px;*/
 	max-height: 250px;
 }
 
